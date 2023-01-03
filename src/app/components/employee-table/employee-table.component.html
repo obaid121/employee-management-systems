@@ -1,0 +1,86 @@
+<div class="container">
+  <div class="d-flex justify-content-between mt-3 mb-3">
+    <strong *ngIf="createEmp && !isEdit">/Create</strong>
+    <strong *ngIf="isEdit">/Edit</strong>
+    <button class="btn btn-secondary" (click)="showCreateEmp()">Create Employee</button>
+  </div>
+  <div class="card mb-3" *ngIf="createEmp">
+    <div class="card-body">
+      <form [formGroup]="empForm" id="empForm" (ngSubmit)="createEmployee()">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" name="firstName" id="firstName"
+          formControlName="firstName" required [ngClass]="{'is-invalid': submitted && empForm.get('firstName')?.invalid}">
+          <div *ngIf="submitted && empForm.get('firstName')?.errors" class="invalid-feedback">
+            This field is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control" name="lastName" id="lastName"
+          formControlName="lastName" required [ngClass]="{'is-invalid': submitted && empForm.get('lastName')?.invalid}">
+          <div *ngIf="submitted && empForm.get('lastName')?.errors" class="invalid-feedback">
+            This field is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" name="email" id="email"
+          formControlName="email" required [ngClass]="{'is-invalid': submitted && empForm.get('email')?.invalid }">
+          <div *ngIf="submitted && empForm.get('email')?.errors" class="invalid-feedback">
+            This field is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="text" class="form-control" name="phone" id="phone"
+          formControlName="phone" required [ngClass]="{'is-invalid': submitted && empForm.get('phone')?.invalid }">
+          <div *ngIf="submitted && empForm.get('phone')?.errors" class="invalid-feedback">
+            This field is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="dob">DOB</label>
+          <input type="text" class="form-control" name="dob" id="dob"
+          formControlName="dob" required [ngClass]="{'is-invalid': submitted && empForm.get('dob')?.invalid }">
+          <div *ngIf="submitted && empForm.get('dob')?.errors" class="invalid-feedback">
+            This field is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="doj">DOJ</label>
+          <input type="text" class="form-control" name="doj" id="doj"
+          formControlName="doj" required [ngClass]="{'is-invalid': submitted && empForm.get('doj')?.invalid }">
+          <div *ngIf="submitted && empForm.get('dob')?.errors" class="invalid-feedback">
+            This field is required
+          </div>
+        </div>
+        <div class="form-group mt-3">
+          <button class="btn btn-primary" *ngIf="createEmp && !isEdit">Create</button>
+          <button class="btn btn-primary" *ngIf="isEdit" type="submit">Edit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <table class="table">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">DOB</th>
+            <th scope="col">DOJ</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody employee-rows [employees]="employees" (deleteEmployee)="delete($event)" (editEmployee)="edit($event)"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+

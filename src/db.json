@@ -1,0 +1,40 @@
+{
+  "employees": [
+    {
+      "firstName": "Ivory",
+      "lastName": "Skinner",
+      "email": "puxybuj@mailinator.com",
+      "phone": "1111111111",
+      "dob": "Ex anim cumque id ex",
+      "doj": "Repudiandae sint sun",
+      "id": 1
+    },
+    {
+      "firstName": "Martina",
+      "lastName": "Mann",
+      "email": "qekozohudu@mailinator.com",
+      "phone": "9896858598",
+      "dob": "Qui et aut molestiae",
+      "doj": "Omnis eaque dignissi",
+      "id": 2
+    },
+    {
+      "firstName": "Colette",
+      "lastName": "Mcdowell",
+      "email": "fepariju@mailinator.com",
+      "phone": "9232321412",
+      "dob": "Est dolores quis do",
+      "doj": "Tempora dolor volupt",
+      "id": 3
+    },
+    {
+      "firstName": "Maggy",
+      "lastName": "Garrett",
+      "email": "huhob@mailinator.com",
+      "phone": "3333333333",
+      "dob": "Aperiam voluptatem ",
+      "doj": "Delectus totam repr",
+      "id": 4
+    }
+  ]
+}
